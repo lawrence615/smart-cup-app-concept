@@ -15,6 +15,7 @@ module.exports = {
           selectors: './src/application/selectors',
           navigation: './src/presentation/navigation',
           views: './src/presentation/views',
+          components: './src/presentation/components',
         }
       }
     ]
