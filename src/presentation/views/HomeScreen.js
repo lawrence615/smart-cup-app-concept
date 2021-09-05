@@ -1,19 +1,23 @@
 import React from 'react'
+// import { useDispatch } from 'react-redux';
 import { SafeAreaView, View, TextInput, Text, StyleSheet } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 import { Icon } from 'react-native-elements'
+
+import Filters from 'components/Filters'
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={tw`p-5`}>
-        <View style={tw `flex-row items-center justify-center`}>
+        <View style={tw`flex-row items-center justify-center`}>
           <TextInput
             style={tw`flex-1 bg-white rounded-full`}
             placeholder="Search..." />
           <Icon style={tw`items-center`} name="search" type='ionicon' color='gray' />
         </View>
         <Text style={tw`py-5 text-2xl`}>Ceramic mugs</Text>
+        <Filters />
       </View>
     </SafeAreaView>
   )
