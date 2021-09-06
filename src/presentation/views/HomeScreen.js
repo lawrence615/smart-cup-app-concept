@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { SafeAreaView, View, TextInput, Text, StyleSheet } from 'react-native'
+import { SafeAreaView, View, TouchableOpacity, TextInput, Text, StyleSheet } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 import { Icon } from 'react-native-elements'
 
@@ -23,7 +23,7 @@ const HomeScreen = () => {
         </View>
         <Text style={tw`py-5 text-2xl`}>Ceramic mugs</Text>
         <Filters />
-        <Text>Selected: {filterSelected?.label}</Text>
+        <Text style={tw`py-2`}>Selected: {filterSelected?.label}</Text>
         <Mugs />
       </View>
     </SafeAreaView>
@@ -34,7 +34,8 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#e9e9e9',
+    // backgroundColor: '#F5F5F4',
+    backgroundColor: '#E7E5E4',
     flex: 1
   },
 })
