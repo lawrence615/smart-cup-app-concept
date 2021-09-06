@@ -1,0 +1,1 @@
+export const selectedMug = state => state.mugg.mug
