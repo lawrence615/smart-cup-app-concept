@@ -43,7 +43,7 @@ const Filters = () => {
             <TouchableOpacity
               onPress={() => dispatch(setFilter(item))}
               style={tw`rounded-full w-20  ${id === filterSelected?.id && 'bg-black'}`}>
-              <Text style={tw`text-center p-1 text-base ${id === filterSelected?.id && 'text-white '}`}>{label}</Text>
+              <Text style={tw`text-center p-1 text-base font-semibold ${id === filterSelected?.id && 'text-white '}`}>{label}</Text>
             </TouchableOpacity>
           </View>
         )}
