@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity, FlatList, Image, StyleSheet } from 'react-native'
-import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux'
 import tw from 'tailwind-react-native-classnames'
 
-import { setFilter } from 'reducers/shopSlice'
-import { selectFilter } from 'selectors/shopSlice'
+import { setFilter } from 'reducers/filterSlice'
+import { selectedFilter } from 'selectors/filterSlice'
 
 const options = [
   {
@@ -30,6 +29,7 @@ const Filters = () => {
 
   const dispatch = useDispatch()
   const [selected, setSelected] = useState(null)
+  const filterSelected = useSelector(selectedFilter)
 
   return (
     <SafeAreaView style={tw`flex-grow`}>
@@ -41,9 +41,9 @@ const Filters = () => {
         renderItem={({ item: { id, value, label }, item }) => (
           <View style={tw`border-gray-100`, { marginRight: 15, backgroundColor: '#d9d9d9', borderRadius: 20, alignItems: 'center' }}>
             <TouchableOpacity
-              onPress={() => setSelected(item)}
-              style={tw`rounded-full w-20  ${id === selected?.id && 'bg-black'}`}>
-              <Text style={tw`text-center p-1 text-base ${id === selected?.id && 'text-white '}`}>{label}</Text>
+              onPress={() => dispatch(setFilter(item))}
+              style={tw`rounded-full w-20  ${id === filterSelected?.id && 'bg-black'}`}>
+              <Text style={tw`text-center p-1 text-base ${id === filterSelected?.id && 'text-white '}`}>{label}</Text>
             </TouchableOpacity>
           </View>
         )}
