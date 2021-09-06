@@ -1,12 +1,17 @@
 import React from 'react'
-// import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 import { SafeAreaView, View, TextInput, Text, StyleSheet } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 import { Icon } from 'react-native-elements'
 
+import { selectedFilter } from 'selectors/filterSlice'
 import Filters from 'components/Filters'
+import Mugs from 'components/Mugs'
+
 
 const HomeScreen = () => {
+  const filterSelected = useSelector(selectedFilter)
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={tw`p-5`}>
@@ -18,6 +23,8 @@ const HomeScreen = () => {
         </View>
         <Text style={tw`py-5 text-2xl`}>Ceramic mugs</Text>
         <Filters />
+        <Text>Selected: {filterSelected?.label}</Text>
+        <Mugs />
       </View>
     </SafeAreaView>
   )
