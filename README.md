@@ -48,8 +48,8 @@ $ npx react-native run-android --port=8082
 
 
 <div>
-  <img align="center" width="110" height="200" src="./screenshots/screen_1.jpeg">
-  <img align="center" width="110" height="200" src="./screenshots/screen_2.jpeg">
+  <img align="center" width="150" height="250" src="./screenshots/screen_1.jpeg">
+  <img align="center" width="150" height="250" src="./screenshots/screen_2.jpeg">
 </div>
 
 ## Remarks
