@@ -66,8 +66,8 @@ const Mugs = () => {
                     // keyExtractor={(item) => item.id}
                     horizontal
                     renderItem={(color) => (
-                      <View style={tw`h-4 w-4 ml-1`}>
-                        <Text style={tw`ml-1`, { backgroundColor: color.item.code }}></Text>
+                      <View style={tw`h-4 w-4 ml-2`}>
+                        <Text style={{ backgroundColor: color.item.code }}></Text>
                       </View>
                     )} />
                 </View>
