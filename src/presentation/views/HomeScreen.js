@@ -21,10 +21,12 @@ const HomeScreen = () => {
             placeholder="Search..." />
           <Icon style={tw`items-center`} name="search" type='ionicon' color='gray' />
         </View>
-        <Text style={tw`py-5 text-2xl`}>Ceramic mugs</Text>
-        <Filters />
-        <Text style={tw`py-2`}>Selected: {filterSelected?.label}</Text>
-        <Mugs />
+        <View>
+          <Text style={tw`py-5 text-2xl`}>Ceramic mugs</Text>
+          <Filters />
+          <Text style={tw`py-2`}>Selected: {filterSelected?.label}</Text>
+          <Mugs />
+        </View>
       </View>
     </SafeAreaView>
   )

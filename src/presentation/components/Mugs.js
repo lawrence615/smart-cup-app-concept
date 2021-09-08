@@ -43,39 +43,41 @@ const Mugs = () => {
   const navigation = useNavigation()
 
   return (
-    <SafeAreaView style={tw`flex-grow`}>
-      <FlatList
-        data={items}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(setMug(item))
-              navigation.navigate('DetailsScreen')
-            }}
-            style={tw`flex-row bg-white m-2 rounded-lg`}>
-            <View style={tw`flex-row`}>
-              <Image style={{ width: 110, height: 120, resizeMode: 'contain' }} source={{ uri: item.image }} />
-              <View style={tw`p-2`}>
-                <Text style={tw`mt-2 text-lg font-semibold`}>{item.name}</Text>
-                <Text style={tw`mt-1 text-base`}>Price: {item.price}</Text>
-                <View style={tw`flex-row items-center mt-1`}>
-                  <Text style={tw`text-base`}>Color:</Text>
-                  <FlatList
-                    data={item.colors}
-                    // keyExtractor={(item) => item.id}
-                    horizontal
-                    renderItem={(color) => (
-                      <View style={tw`h-4 w-4 ml-2`}>
-                        <Text style={{ backgroundColor: color.item.code }}></Text>
-                      </View>
-                    )} />
+    <SafeAreaView>
+      <View style={tw`flex`}>
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => {
+                dispatch(setMug(item))
+                navigation.navigate('DetailsScreen')
+              }}
+              style={tw`flex-row bg-white m-2 rounded-lg`}>
+              <View style={tw`flex-row`}>
+                <Image style={{ width: 110, height: 120, resizeMode: 'cover' }} source={{ uri: item.image }} />
+                <View style={tw`p-2`}>
+                  <Text style={tw`mt-2 text-lg font-semibold`}>{item.name}</Text>
+                  <Text style={tw`mt-1 text-base`}>Price: {item.price}</Text>
+                  <View style={tw`flex-row items-center mt-1`}>
+                    <Text style={tw`text-base`}>Color:</Text>
+                    <FlatList
+                      data={item.colors}
+                      // keyExtractor={(item) => item.id}
+                      horizontal
+                      renderItem={(color) => (
+                        <View style={tw`h-4 w-4 ml-2`}>
+                          <Text style={{ backgroundColor: color.item.code }}></Text>
+                        </View>
+                      )} />
+                  </View>
                 </View>
               </View>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
+            </TouchableOpacity>
+          )}
+        />
+      </View>
     </SafeAreaView>
   )
 }

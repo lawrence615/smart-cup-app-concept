@@ -24,7 +24,7 @@ const DetailsScreen = () => {
         <Icon name="chevron-left" size={35} />
       </TouchableOpacity>
       <View style={tw`h-1/2`}>
-        <Image style={tw`flex-grow`, { resizeMode: 'stretch', width: '100%', height: '100%' }} source={{ uri: mug?.image }} />
+        <Image style={tw`flex-grow`, { resizeMode: 'cover', width: '100%', height: '100%' }} source={{ uri: mug?.image }} />
       </View>
       <View style={tw`h-1/2 p-5`}>
         <Text style={tw`text-2xl font-bold`}>{mug?.name}</Text>
